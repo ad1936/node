@@ -32,6 +32,8 @@ app.use(flash())
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.set('views', path.join(__dirname, 'Views'));
+
 
 console.log(seed);
 // mongoose.set('useFindAndModify', false);
