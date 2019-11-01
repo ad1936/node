@@ -2,7 +2,7 @@ var express= require("express"),
     router = express.Router({mergeParams: true}),
     Campground=require("../models/campground"),
     Comments=require("../models/comment"),
-    Middleware=require("../middleware")
+    Middleware=require("../Middleware")
    
     //New Route
     router.get("/new",Middleware.isLoggedIn,function(req,res){

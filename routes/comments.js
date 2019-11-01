@@ -3,7 +3,7 @@ var express = require("express")
     Campground=require("../models/campground"),
     Comments=require("../models/comment"),
     user=require("../models/user"),
-    Middleware=require("../middleware")
+    Middleware=require("../Middleware")
 
 router.get("/comment/new",Middleware.isLoggedIn,function(req,res){
     Campground.findById(req.params.id,function(err,foundCampground){
