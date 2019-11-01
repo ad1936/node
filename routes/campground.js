@@ -6,7 +6,7 @@ var express= require("express"),
    
     //New Route
     router.get("/new",Middleware.isLoggedIn,function(req,res){
-        res.render("./Campground/new")
+        res.render("Campground/new")
     });
 
     //Add Route
