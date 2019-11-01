@@ -80,7 +80,7 @@ seed();
 
 //Home Route
 app.get("/",function(req,res){
-    res.render("Campground/home");
+    res.render("/Campground/home");
 });
 
 
