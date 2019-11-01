@@ -7,6 +7,7 @@ var express= require("express")
     LocalStrategy=require("passport-local"),
     mongoose=require("mongoose"),
     passportLocalMongoose=require("passport-local-mongoose"),
+    path = require('path'),
     flash=require("connect-flash");
 
 var user=require("./models/user"),
@@ -102,6 +103,6 @@ function isLoggedIn(req, res, next){
     res.redirect("/login");
 }
 
-app.listen(process.env.PORT,function(){
+app.listen(3000,function(){
     console.log("server started");
 });
