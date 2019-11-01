@@ -80,7 +80,7 @@ seed();
 
 //Home Route
 app.get("/",function(req,res){
-    res.render("./Campground/home");
+    res.render("Campground/home");
 });
 
 
@@ -90,7 +90,7 @@ app.use("/campgrounds",index_route)
 app.use("/campgrounds/:id",comments_route)
 
 app.get("/*",function(req,res){
-    res.render("./Campground/home");
+    res.render("Campground/home");
 });
 
 function isLoggedIn(req, res, next){
