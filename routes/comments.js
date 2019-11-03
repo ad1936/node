@@ -77,7 +77,7 @@ router.put("/comment/:comment_id",Middleware.verifyCommentUser,function(req,res)
 });
 
 router.delete("/comment/:comment_id",Middleware.verifyCommentUser,function(req,res){
-    Comments.findByIdAndDelete(req.params.id,function(err,removed){
+    Comments.findByIdAndDelete(req.params.comment_id,function(err,removed){
         if(err){
             console.log(err);
         } else{
