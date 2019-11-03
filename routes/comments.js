@@ -65,7 +65,7 @@ router.get("/comment/:comment_id/edit",Middleware.verifyCommentUser,function(req
 })
 
 //update route
-router.put("/comment/:comment_id",verifyUser,function(req,res){
+router.put("/comment/:comment_id",Middleware.verifyUser,function(req,res){
     Comments.findByIdAndUpdate(req.params.comment_id,{text:req.body.comment},function(err,foundComment){
         if(err){
             console.log(err)
@@ -76,7 +76,7 @@ router.put("/comment/:comment_id",verifyUser,function(req,res){
     })
 });
 
-router.delete("/comment/:comment_id",verifyUser,function(req,res){
+router.delete("/comment/:comment_id",Middleware.verifyUser,function(req,res){
     Comments.findByIdAndDelete(req.params.id,function(err,removed){
         if(err){
             console.log(err);
@@ -88,7 +88,7 @@ router.delete("/comment/:comment_id",verifyUser,function(req,res){
 
 function verifyUser(req,res,next){
     if(req.isAuthenticated()){
-        Comment.findById(req.params.comment_id,function(err,foundComment){
+        Comments.findById(req.params.comment_id,function(err,foundComment){
             if(foundComment.author.id.equals(req.user._id)) {
                 next()
             }
